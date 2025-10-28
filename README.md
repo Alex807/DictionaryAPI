@@ -1,28 +1,23 @@
-# 📚 Dictionary Application 📚
+# 📚 Multilingual Dictionary Application 📚
 
 ## 📋 Overview
-The Dictionary Application is a Java-based ability that lets users look up words in different languages through both command-line and graphical interfaces.  
-It uses multiple external APIs to **provide word definitions, translations, examples, synonyms, and antonyms.**
+A sophisticated multilingual-English dictionary application integrating **3 external REST APIs** with intelligent **caching mechanism** to optimize response times and preserve API token usage. Features **automated persistence** with real-time database state management and **GUI interface** using JavaSwing.
 
-### External services used:
-- **Dictionary API** (dictionaryapi.dev) for English definitions and word meaning check
-- **MyMemory Translation API** for translations
-- **Cohere AI API** for examples, synonyms, and antonyms
+## ✨ Key Features
+- **🌐 Multi-API Integration** - Dictionary API, MyMemory Translation, Cohere AI
+- **💾 Smart Caching** - Local storage with persistent `.txt` database
+- **🖥️ Dual Interface** - Both CLI and GUI versions available
+- **🔄 Real-Time Translation** - Instant word definitions and translations
+- **📝 Comprehensive Results** - Definitions, examples, synonyms, and antonyms
+- **🗣️ Multi-Language Support** - Translation between multiple languages
 
-## ✨ Features
-For each word, the application provides:
-- English translation (for all languages words)
-- Dictionary definition
-- Example usage
-- Synonyms
-- Antonyms
+## 🛠️ Technology Stack
 
-### 📝 Additional features:
-- Two versions of interfaces (CLI and GUI)
-- Local caching of looked-up words
-- Persistent storage (keeps previous data in a `.txt` database)
-- Language history tracking (for GUI version)
-- Multi-language support
+**Core:** Java 11+, JavaSwing GUI, HTTP Client, JSON Processing
+
+**Architecture:** Singleton Pattern, MVC Structure, REST API Integration, File I/O
+
+**APIs:** Dictionary API (dictionaryapi.dev), MyMemory Translation API, Cohere AI API
 
 ## 🧩 Components
 - **RunApp**: Main entry point for CLI and GUI options (user decides where to continue app execution)
@@ -46,37 +41,3 @@ Make sure you compile all components.
  ### Execute: java RunApp
 - **You don't need to run separated files for CLI/GUI, both are integrated into 'RunApp' entry point.**
 - Launch and select "yes"/"y" for GUI version, otherwise you will go for CLI version.
-
-
-## 📁 File Structure
-
-- ├── src/
-- │   ├── RunApp.java
-- │   ├── GUI.java- 
-- │   ├── components/
-- │   │   ├── OnlineDictionary.java
-- │   │   ├── Translator.java
-- │   │   ├── AIComponent.java
-- │   │   ├── DataBaseManager.java
-- │   │   ├── JSON_Parser.java
-- │   │   └── LanguageCodeFinder.java
-- ├── resources/
-- │   ├── DataBase.txt
-- │   └── LanguageCodes.txt
-
-
-## 🔑 API Keys and External Services
-- **Dictionary API** - No key required
-- **MyMemory Translation API** - No key required for limited usage
-- **Cohere AI API** - free trial key with limitated tokens
-
-## ⚠️ Error Handling
-The application handles errors for cases:  
-- invalid inputs
-- API failures
-- file access issues
-
-## 📦 Dependencies
-- Java 11 or higher
-- Internet connection
-- Swing library for GUI(included in standard Java)
